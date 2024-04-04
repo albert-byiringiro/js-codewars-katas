@@ -19,3 +19,5 @@ let sheep = [true, true, true, false,
     false, false, true, true, "true", undefined, null];
 
 console.log(countingSheep(sheep));
+
+// solution 2: use filter only and count the length
