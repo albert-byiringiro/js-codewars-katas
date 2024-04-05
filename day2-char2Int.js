@@ -9,14 +9,9 @@ Assume the test input string is always a valid string. For example, the test inp
 
 */
 
-function girlAge(str) {
-    let age = 0;
-    if ((typeof str) === "string") {
-        let first = str.charAt(0);
-        age = parseInt(first);
-    }
-
-    return age;
+function getAge(str) {
+    let numChar = str.match(/\d/);
+    return +numChar;
 }
 
-console.log(girlAge("2 years old"))
+console.log(getAge("34bar34"))
