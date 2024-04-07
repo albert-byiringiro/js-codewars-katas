@@ -18,7 +18,7 @@ Note: base is a non-negative number, factor is a positive number.
 */
 
 function checkFactors(base, factor) {
-    return Number.isInteger(base / factor)
+    return (base % factor === 0);
 }
 
 console.log(checkFactors(10, 2))
