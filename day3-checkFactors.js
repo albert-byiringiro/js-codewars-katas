@@ -22,3 +22,5 @@ function checkFactors(base, factor) {
 }
 
 console.log(checkFactors(10, 2))
+
+// What I have learnt is: using isInteger to check if a number is an integer 
