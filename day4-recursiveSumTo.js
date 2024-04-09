@@ -1,10 +1,9 @@
 function sumTo(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
-        sum += i;
-        console.log(i);
+    if (n <= 1) {
+        return n;
+    } else {
+        return n + sumTo(n - 1)
     }
-    return sum;
 }
 
-console.log(sumTo(6));
+console.log(sumTo(4));
