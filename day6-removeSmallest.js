@@ -14,10 +14,13 @@ Don't change the order of the elements that are left.
 
 function removeMinimum(arr) {
     let alteredArray = [];
-     
+    // indexof returns the first index at which an element can be found in an array
+    //  Math.max() returns the smallest element in the array
     let smallestElement = arr.indexOf(Math.min(...arr));
     arr.forEach((element, i) => {
+        // check to see if index doesn't equal to the index above
         if (i !== smallestElement) {
+            // push to the new array
             alteredArray.push(element);
         }
     })
