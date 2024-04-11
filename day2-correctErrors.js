@@ -13,14 +13,10 @@ The test cases contain numbers only by mistake.
 */
 
 function correctErrors(str) {
-    function correctErrors(str) {
-        return str.replace(/5/g, "S").replace(/0/g, "O").replace(/1/, "I");
-    }
-
-    console.log(correctErrors("M00kn15s"))
+    return str.replace(/5/g, "S").replace(/0/g, "O").replace(/1/, "I");
 }
 
-console.log(correctErrors("M00kn155"))
+console.log(correctErrors("M00kn15s"))
 
 
 /*

@@ -6,7 +6,7 @@ Write function RemoveExclamationMarks which removes all exclamation marks from a
 */
 
 function RemoveExclamationMarks(str) {
-    return str.split("").filter((char) => char !== "!").join("");
+    return str.replace(/!/gi, "");
 }
 
 console.log(RemoveExclamationMarks("Ru!k!ara!"))
