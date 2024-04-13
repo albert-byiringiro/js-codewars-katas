@@ -1,10 +1,10 @@
-function getMiddle(string) {
-    let strHalf = string.length / 2;
+function getMiddle(s) {
+    let strHalf = s.length / 2;
     let middle = "";
-    if (strHalf % 2 === 0) {
-        middle += string.slice(strHalf - 1, strHalf + 1);
+    if (s.length % 2 === 0) {
+        middle += s.slice(strHalf - 1, strHalf + 1);
     } else {
-        middle += string.charAt(strHalf)
+        middle += s.charAt(strHalf)
     }
 
     return middle;
