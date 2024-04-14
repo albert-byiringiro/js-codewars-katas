@@ -12,16 +12,7 @@ largest(2, [7,6,5,4,3,2,1])
 
 function largest(n, array) {
     // Find the n highest elements in a list
-    let sorted = array.sort((a, b) => b - a);
-
-    console.log(sorted)
-    let largs = [];
-    // step 1: 
-    for (let i = 0; i < n; i++) {
-        largs.push(sorted[i]);
-    }
-
-    return largs;
+    return array.sort((a, b) => b - a).slice(0, n).sort((a, b) => a - b);
 }
 
 console.log(largest(2, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]))
