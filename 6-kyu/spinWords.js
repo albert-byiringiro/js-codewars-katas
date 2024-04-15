@@ -7,17 +7,10 @@ Examples:
 */
 
 function spinWords(string) {
-    let str = string.split(" ");
-    reversed = [];
-    for (let i = 0; i < str.length; i++) {
-        if (str[i].length >= 5) {
-            let rev = str[i].split("").reverse();
-            reversed.push(rev.join(""))
-        } else {
-            reversed.push(str[i]);
-        }
-    }
-    return reversed.join(" ")
+    //TODO Have fun :)
+    return string.split(" ").map((word) => {
+        return (word.length >= 5) ? word.split("").reverse().join("") : word;
+    }).join(" ");
 }
 
 console.log(spinWords("Hey fellow warriors in Rw"))
