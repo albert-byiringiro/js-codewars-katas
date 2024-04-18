@@ -50,3 +50,20 @@ const doubleArray = originalArray.myMap((val) => {
 
 console.log(doubleArray)
 
+
+
+Array.prototype.myReduce = function (callback, initialValue) {
+    let accumulator = initialValue !== undefined ? initialValue : this[0];
+    let x = this.length;
+
+    for (let index = initialValue !== undefined ? 0 : 1; index < x; index++) {
+        accumulator = callback(accumulator, this[index], index, this);
+    }
+
+    return accumulator;
+}
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const sum = numbers.myReduce((acc, curr) => acc + curr, 0);
+
+console.log(sum);
