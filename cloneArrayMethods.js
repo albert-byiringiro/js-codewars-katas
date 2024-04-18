@@ -85,3 +85,5 @@ const array = [1, 2, 3, 4, 5, 6, 6, 7, 8];
 array.myForEach((number, index) => {
     console.log(`Element at index ${index}: ${number}`);
 })
+
+// clone flat array method - 
