@@ -34,6 +34,9 @@ For myForEach, you'll need to loop through each element and execute the callback
 
 */
 
+
+// MY MAP ARRAY METHOD
+
 Array.prototype.myMap = function (callback) {
     let resultArray = [];
     let x = this.length;
@@ -51,6 +54,7 @@ const doubleArray = originalArray.myMap((val) => {
 console.log(doubleArray)
 
 
+// MY ARRAY REDUCE METHOD
 
 Array.prototype.myReduce = function (callback, initialValue) {
     let accumulator = initialValue !== undefined ? initialValue : this[0];
@@ -67,3 +71,17 @@ const numbers = [1, 2, 3, 4, 5, 6];
 const sum = numbers.myReduce((acc, curr) => acc + curr, 0);
 
 console.log(sum);
+
+// MY FOREACH ARRAY METHOD
+Array.prototype.myForEach = function (callback) {
+    let x = this.length;
+    let resultsArray = [];
+    for (let index = 0; index < x; index++) {
+        callback(this[index], index, this);
+    }
+}
+
+const array = [1, 2, 3, 4, 5, 6, 6, 7, 8];
+array.myForEach((number, index) => {
+    console.log(`Element at index ${index}: ${number}`);
+})
