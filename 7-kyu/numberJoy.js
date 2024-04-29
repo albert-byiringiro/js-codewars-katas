@@ -1,26 +1,10 @@
 // Especially Joyful numbers
 
 function numberJoy(n) {
-    // your code
-    let arr = [...n.toString()];
-    let sum = 0;
+    let s = n.toString().split("").reduce((s, v) => s + +v, 0);
 
-    for (let num of arr) {
-        let na = parseInt(num);
-        sum += na;
-    }
-
-    let reversed = [...sum.toString()].reverse().join("");
-
-    let rev = parseInt(reversed);
-
-    let checker = sum * rev;
-
-    if (checker === n) {
-        return true;
-    } else {
-        return false;
-    }
+    let sr = +s.toString().split("").reverse().join("");
+    return s * sr == n;
 }
 
 console.log(numberJoy(1729));
