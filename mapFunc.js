@@ -1,4 +1,4 @@
-function map(array, callback) {
+let map = (array, callback) => {
     let output = [];
 
     for (let i = 0; i < array.length; i++) {
@@ -8,8 +8,6 @@ function map(array, callback) {
     return output;
 }
 
-function addTwo(num) {
-    return num + 2;
-}
+const addTwo = input => input + 2;
 
 console.log(map([1, 2, 3], addTwo));
