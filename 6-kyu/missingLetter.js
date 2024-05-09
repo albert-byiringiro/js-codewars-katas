@@ -8,22 +8,15 @@ The array will always contain letters in only one case.
 
 */
 let missingLetter = (arr) => {
-    let alphabets = "abcdefghijklmnopqrstuvwxyz";
-
-    if (/[A-Z]/g.test(arr.join(""))) {
-        alphabets = alphabets.toUpperCase();
+    const sub = Array.from({length:arr.length+1}).map((n,i)=>String.fromCharCode(arr[0].charCodeAt()+i));
+  
+    for(let s of sub){
+      if(!arr.includes(s)){
+        return s;
+      }
     }
-
-    let sub = alphabets.slice(alphabets.indexOf(arr[0]), alphabets.indexOf(arr[arr.length - 1]) + 1);
-
-    for (const s of sub) {
-        if (!arr.includes(s)) {
-            return s;
-        }
-    }
-};
-
-
-
-missingLetter(["a", "b", "c", "d", "f"]);
-missingLetter(["O", "Q", "R", "S"]);
+    console.log(sub);
+  }
+  
+  missingLetter(["a", "b", "c", "d", "f"]);
+  missingLetter(["O", "Q", "R", "S"]);
