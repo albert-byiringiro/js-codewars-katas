@@ -9,20 +9,8 @@ Finish the solution so that it returns the sum of all the multiples of 3 or 5 be
 
 */
 
-function multiples(n) {
-
-    let sum = 0;
-    if (n > 0) {
-        for (let i = 0; i < n; i++) {
-            if (i % 3 === 0 || i % 5 === 0) {
-                sum += i;
-            }
-        }
-    } else {
-        sum = 0;
-    }
-
-    return sum;
+let solution = (num) => {
+    return num < 1 ? 0 : [...new Array(num).keys()].filter(n => n % 3 === 0 || n % 5 === 0).reduce((a, b) => a + b);
 }
 
-console.log(multiples(10))
+console.log(solution(10))
