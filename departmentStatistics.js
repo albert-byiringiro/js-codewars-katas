@@ -21,24 +21,36 @@ HR: 40
 
 */
 
-function departAge(employees) {
-    // define
+let departmentAgeStatistics = (employees) => {
+    // define the counter checker for the employees
     let departmentSums = {};
-    employees.forEach((employee) => {
+    for (const employee of employees) {
         const { age, department } = employee;
         if (!departmentSums[department]) {
+            // if there's no such department, add it with age as it's value
             departmentSums[department] = age;
         } else {
             departmentSums[department] += age;
         }
-    })
+    }
 
-    const departmentAverages = {};
+    // create the average of all the age per department
+    let departmentAverages = {};
     for (const department in departmentSums) {
-        const totalAge = departmentSums[department];
-        const numEmployees = employees.filter((emp) => emp.department === department).length;
+        let totalAge = departmentSums[department];
+        let numEmployees = employees.filter((emp) => emp.department === department).length;
         departmentAverages[department] = Math.round(totalAge / numEmployees);
     }
 
-    return departmentAverages;
+    return departmentSums;
 }
+
+const employees = [
+    { name: 'Alice', age: 30, department: 'Engineering' },
+    { name: 'Bob', age: 25, department: 'Marketing' },
+    { name: 'Charlie', age: 35, department: 'Engineering' },
+    { name: 'David', age: 40, department: 'HR' },
+    { name: 'Eve', age: 28, department: 'Marketing' },
+];
+
+console.log(departmentAgeStatistics(employees));
