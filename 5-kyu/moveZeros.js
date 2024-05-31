@@ -1,4 +1,8 @@
 /*
+## Moving Zeros To The End
+
+https://www.codewars.com/kata/moving-zeros-to-the-end/train/javascript/5ace60f73a33e62d1c00021a
+
 input: array
 output: new array with all zeros at the end of the array.
 steps:
