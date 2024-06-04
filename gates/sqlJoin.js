@@ -1,4 +1,4 @@
-function sqlJoin(array1, array2, commonProperty) {
+const sqlJoin = (array1, array2, commonProperty) => {
     // iterate through the lookup from the second array
     const array2Map = new Map(array2.map(item => [item[commonProperty], item]));
 
@@ -6,9 +6,9 @@ function sqlJoin(array1, array2, commonProperty) {
         const item2 = array2Map.get(item1[commonProperty])
 
         if (item2) {
-            return { ...item1, ...item2 }
+            return { ...item1, ...item2 };
         }
-    }).filter(item => item !== undefined)
+    }).filter(item => item !== undefined);
     return result;
 }
 
