@@ -1,16 +1,14 @@
-function sqlJoin(array1, array2) {
+function sqlJoin(array1, array2, commonProperty) {
     // iterate through the lookup from the second array
-    const array2Map = new Map(array2.map(item => [item.id, item]));
+    const array2Map = new Map(array2.map(item => [item[commonProperty], item]));
 
-    // iterate through the first array
     const result = array1.map(item1 => {
-        const item2 = array2Map.get(item1.id)
+        const item2 = array2Map.get(item1[commonProperty])
 
         if (item2) {
             return { ...item1, ...item2 }
         }
     }).filter(item => item !== undefined)
-
     return result;
 }
 
@@ -28,6 +26,6 @@ const salaries = [
     { id: 4, salary: 55000 }
 ];
 
-const result = sqlJoin(employees, salaries);
+const result = sqlJoin(employees, salaries, "id");
 
 console.log(result)
