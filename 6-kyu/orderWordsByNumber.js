@@ -28,22 +28,22 @@ return: words are ordered according to the numbers they contain
 
 */
 
-function order(words) {
-    const array = words.split(' ');
-    const sortedArray = [];
 
-    for (let i = 0; i <= array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-            if (array[j].indexOf(i) >= 0) {
-                sortedArray.push(array[j]);
-            }
-        }
-    }
-    return sortedArray.join(" ");
+let order = (words) => {
+    if (words.length === 0) return "";
+    return words.split(" ").sort((a, b) => findNumberInWord(a) - findNumberInWord(b)).join(" ")
 }
 
-console.log(order("is2 Thi1s T4est 3a"))
+const findNumberInWord = (word) => {
+    for (const char of word) {
+        if (!isNaN(char)) {
+            return parseInt(char, 10)
+        }
+    }
 
+    return -1;
+}
+console.log(order("is2 Thi1s T4est 3a"))
 
 
 
