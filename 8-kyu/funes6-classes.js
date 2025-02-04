@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/56ff9b53140fcca90b000530/train/javascript
+
 class Dog {
     constructor(name, age, gender, species, size, master, loyal) {
         this.name = name;
